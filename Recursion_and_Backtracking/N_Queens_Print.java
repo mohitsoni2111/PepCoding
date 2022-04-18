@@ -27,7 +27,7 @@ public class N_Queens_Print {
         }
 
         for (int col = 0; col < chess[0].length; col++){        // col are options in each level
-            if(isSafeLocation(chess, row, col) == true) {
+            if(isSafeLocation(chess, row, col)) {
                 chess[row][col] = 1;
                 printNQueens(chess, queenSoFar + row + "-" + col + ",", row + 1);
                 chess[row][col] = 0;
