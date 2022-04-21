@@ -54,8 +54,7 @@ public class Max_Score {
         for (int i = 0; i < score.length; i++) {
             score[i] = scn.nextInt();
         }
-        if (words == null || words.length == 0 || letters == null || letters.length == 0 || score == null
-                || score.length == 0) {
+        if (words.length == 0 || letters.length == 0) {
             System.out.println(0);
             return;
         }
