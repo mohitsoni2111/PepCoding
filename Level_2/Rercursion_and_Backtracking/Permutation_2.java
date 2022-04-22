@@ -5,7 +5,22 @@ import java.io.InputStreamReader;
 
 public class Permutation_2 {
     public static void permutations(int cb, int tb, int[] items, int ssf, int ts, String asf){
+        if (cb > tb){
+            if (ssf == ts){
+                System.out.println(asf);
+            }
+            return;
+        }
 
+        for (int i = 0; i < ts; i++){
+            if (items[i] == 0){
+                items[i] = 1;
+                permutations(cb + 1, tb, items, ssf + 1, ts, asf + (i + 1));
+                items[i] = 0;
+            }
+        }
+
+        permutations(cb + 1, tb, items, ssf, ts, asf);
     }
 
     public static void main(String[] args) throws Exception {
