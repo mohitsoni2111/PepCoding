@@ -6,7 +6,18 @@ public class Swap_All_Odd_And_Even_Bits {
     public static void main(String[] args){
         Scanner scn = new Scanner(System.in);
         int n = scn.nextInt();
-        //write your code here
 
+        int oddMask = 0x55555555;
+        int evenMask = 0xAAAAAAAA;
+
+        int odds = (n & oddMask);
+        int evens = (n & evenMask);
+
+        odds <<= 1;
+        evens >>= 1;
+
+        n = odds | evens;
+
+        System.out.println(n);
     }
 }
