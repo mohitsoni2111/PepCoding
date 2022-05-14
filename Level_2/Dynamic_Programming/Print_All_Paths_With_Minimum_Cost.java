@@ -1,6 +1,7 @@
 package Level_2.Dynamic_Programming;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayDeque;
 
 public class Print_All_Paths_With_Minimum_Cost {
     private static class Pair {
@@ -14,6 +15,7 @@ public class Print_All_Paths_With_Minimum_Cost {
             this.j = j;
         }
     }
+
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
@@ -27,7 +29,45 @@ public class Print_All_Paths_With_Minimum_Cost {
             }
         }
 
+        int[][] dp = new int[arr.length][arr[0].length];
 
+        for (int i = dp.length - 1; i >= 0; i--) {
+            for (int j = dp[0].length - 1; j >= 0; j--) {
+                if (i == dp.length - 1 && j == dp[0].length - 1) {
+                    dp[i][j] = arr[i][j];
+                } else if (i == dp.length - 1) {
+                    dp[i][j] = dp[i][j + 1] + arr[i][j];
+                } else if (j == dp[0].length - 1) {
+                    dp[i][j] = dp[i + 1][j] + arr[i][j];
+                } else {
+                    dp[i][j] = Math.min(dp[i][j + 1], dp[i + 1][j]) + arr[i][j];
+                }
+            }
+        }
+        System.out.println(dp[0][0]);
 
+        ArrayDeque<Pair> queue = new ArrayDeque<>();
+        queue.add(new Pair("", 0, 0));
+
+        while (queue.size() > 0) {
+            Pair rem = queue.removeFirst();
+
+            if (rem.i == dp.length - 1 && rem.j == dp[0].length - 1) {
+                System.out.println(rem.psf);
+            } else if (rem.i == dp.length - 1) {
+                queue.add(new Pair(rem.psf + "H", rem.i, rem.j + 1));
+            } else if (rem.j == dp[0].length - 1) {
+                queue.add(new Pair(rem.psf + "V", rem.i + 1, rem.j));
+            } else {
+                if (dp[rem.i][rem.j + 1] < dp[rem.i + 1][rem.j]) {
+                    queue.add(new Pair(rem.psf + "H", rem.i, rem.j + 1));
+                } else if (dp[rem.i][rem.j + 1] > dp[rem.i + 1][rem.j]) {
+                    queue.add(new Pair(rem.psf + "V", rem.i + 1, rem.j));
+                } else {
+                    queue.add(new Pair(rem.psf + "V", rem.i + 1, rem.j));
+                    queue.add(new Pair(rem.psf + "H", rem.i, rem.j + 1));
+                }
+            }
+        }
     }
 }

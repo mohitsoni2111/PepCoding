@@ -1,5 +1,4 @@
 package Dynamic_Programming;
-
 import java.util.Scanner;
 
 public class Zero_One_Knapsack {
