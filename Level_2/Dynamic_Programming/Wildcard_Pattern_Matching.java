@@ -4,21 +4,41 @@ import java.util.Scanner;
 
 public class Wildcard_Pattern_Matching {
     public static boolean solution(String str, String pattern) {
-        int m = pattern.length();
-        int n = str.length();
+        boolean[][] dp = new boolean[pattern.length() + 1][str.length() + 1];
 
-        boolean[][] dp = new boolean[m + 1][n + 1];
-        dp[m][n] = true;
-
-        for (int j = n - 1; j >= 0; j--){
-            for (int i = m - 1; i >= 0; i--){
-                
+        for (int i = dp.length - 1; i >= 0; i--){
+            for (int j = dp[0].length - 1; j >= 0; j--){
+                if (i == dp.length - 1 && j == dp[0].length - 1){
+                    dp[i][j] = true;
+                }
+                else if (i == dp.length - 1) {
+                    dp[i][j] = false;
+                }
+                else if (j == dp[0].length - 1){
+                    if (pattern.charAt(i) == '*'){
+                        dp[i][j] = dp[i + 1][j];
+                    }
+                    else {
+                        dp[i][j] = false;
+                    }
+                }
+                else {
+                    if (pattern.charAt(i) == '?'){
+                        dp[i][j] = dp[i + 1][j + 1];
+                    }
+                    else if (pattern.charAt(i) == '*'){
+                        dp[i][j] = dp[i + 1][j] || dp[i][j + 1];
+                    }
+                    else if (pattern.charAt(i) == str.charAt(j)){
+                        dp[i][j] = dp[i + 1][j + 1];
+                    }
+                    else {
+                        dp[i][j] = false;
+                    }
+                }
             }
         }
-
-
-
-        return false;
+        return dp[0][0];
     }
 
     public static void main(String[] args) {
