@@ -33,7 +33,7 @@ public class Has_Path {
             this.nbr = nbr;
             this.wt = wt;
         }
-    }
+    }   // Source, Neighbour, Weight
     public static void main(String[] args) throws Exception{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int vtces = Integer.parseInt(br.readLine());

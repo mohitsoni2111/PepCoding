@@ -14,7 +14,7 @@ public class Iterative_DFS {
             this.v = v;
             this.psf = psf;
         }
-    }
+    }   // Vertex, PathSoFar
     private static void iterativeDFS(ArrayList<Edge>[] graph, int src, int vtces) {
         boolean[] visited = new boolean[vtces];
         Stack<Pair> stack = new Stack<>();
@@ -42,7 +42,7 @@ public class Iterative_DFS {
             this.src = src;
             this.nbr = nbr;
         }
-    }
+    }   // Source, Neighbour
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

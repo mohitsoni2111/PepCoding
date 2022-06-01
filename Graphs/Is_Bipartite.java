@@ -17,7 +17,7 @@ public class Is_Bipartite {
             this.psf = psf;
             this.level = level;
         }
-    }
+    } // Vertex, PathSoFar, Level
     private static boolean isBipartite(ArrayList<Edge>[] graph, int vtces) {
         int[] visited = new int[vtces];
         Arrays.fill(visited, -1);
@@ -39,9 +39,9 @@ public class Is_Bipartite {
                 if (rem.level != visited[rem.level]){
                     return false;
                 }
-            }
-            else
+            } else {
                 visited[rem.v] = rem.level;
+            }
 
             for (Edge edge : graph[rem.v]){
                 if (visited[edge.nbr] == -1){
@@ -63,7 +63,7 @@ public class Is_Bipartite {
             this.nbr = nbr;
             this.wt = wt;
         }
-    }
+    }   // Source, Neighbour, Weight
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

@@ -13,7 +13,7 @@ public class Is_Cyclic {
             this.v = v;
             this.psf = psf;
         }
-    }
+    } // Vertex, PathSoFar
     public static boolean isCyclicHelper(ArrayList<Edge>[] graph, int vtces){
         boolean[] visited = new boolean[vtces];
         for (int v = 0 ;v < vtces; v++){
@@ -54,7 +54,7 @@ public class Is_Cyclic {
             this.nbr = nbr;
             this.wt = wt;
         }
-    }
+    }  // Source, Neighbour, Weight
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

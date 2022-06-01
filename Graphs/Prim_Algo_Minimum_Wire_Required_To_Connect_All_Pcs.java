@@ -1,5 +1,4 @@
 package Graphs;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -21,8 +20,7 @@ public class Prim_Algo_Minimum_Wire_Required_To_Connect_All_Pcs {
         public int compareTo(Pair o) {
             return this.wt - o.wt;
         }
-    }
-
+    }   // Vertex, Acquiring Vertex, WeightSoFar
     private static void minimumWire(ArrayList<Edge>[] graph, int vtces) {
         boolean[] visited = new boolean[vtces];
         PriorityQueue<Pair> queue = new PriorityQueue<>();
@@ -54,7 +52,7 @@ public class Prim_Algo_Minimum_Wire_Required_To_Connect_All_Pcs {
             this.nbr = nbr;
             this.wt = wt;
         }
-    }
+    }   // Source, Neighbour, Weight
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

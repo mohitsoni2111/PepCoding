@@ -14,7 +14,6 @@ public class Get_Connected_Components {
             }
         }
     }
-
     private static ArrayList<ArrayList<Integer>> getConnectedComponents(ArrayList<Edge>[] graph, int vtces){
         ArrayList<ArrayList<Integer>> comps = new ArrayList<>();
 
@@ -39,7 +38,7 @@ public class Get_Connected_Components {
             this.nbr = nbr;
             this.wt = wt;
         }
-    }
+    }  // Source, Neighbour, Weight
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

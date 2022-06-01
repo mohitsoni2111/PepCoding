@@ -15,7 +15,6 @@ public class Perfect_Friends {
             }
         }
     }
-
     public static class Edge{
         int src;
         int nbr;
@@ -23,7 +22,7 @@ public class Perfect_Friends {
             this.src = src;
             this.nbr = nbr;
         }
-    }
+    }  // Source, Neighbour, Weight
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -44,6 +43,7 @@ public class Perfect_Friends {
             graph[v2].add(new Edge(v2, v1));
         }
 
+        // Write your code here
         boolean[] visited = new boolean[n];
         ArrayList<ArrayList<Integer>> comps = new ArrayList<>();
         for (int v = 0; v < n; v++){

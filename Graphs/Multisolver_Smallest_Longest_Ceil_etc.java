@@ -35,8 +35,7 @@ public class Multisolver_Smallest_Longest_Ceil_etc {
             }
             if (pq.size() < k){
                 pq.add(new Pair(wsf, psf));
-            }
-            else {
+            } else {
                 if (wsf > pq.peek().wsf){
                     pq.remove();
                     pq.add(new Pair(wsf, psf));
@@ -64,7 +63,7 @@ public class Multisolver_Smallest_Longest_Ceil_etc {
             this.nbr = nbr;
             this.wt = wt;
         }
-    }
+    } // Source, Neighbour, Weight
     static class Pair implements Comparable<Pair> {
         int wsf;
         String psf;
@@ -77,7 +76,7 @@ public class Multisolver_Smallest_Longest_Ceil_etc {
         public int compareTo(Pair o){
             return this.wsf - o.wsf;
         }
-    }
+    }  // WeightSoFar, PathSoFar
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

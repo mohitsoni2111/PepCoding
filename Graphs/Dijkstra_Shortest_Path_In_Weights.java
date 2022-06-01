@@ -1,17 +1,14 @@
 package Graphs;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 
 public class Dijkstra_Shortest_Path_In_Weights {
-
     static class Pair implements Comparable<Pair>{
         int v;
         String psf;
         int wsf;
-
         public Pair(int v, String psf, int weight) {
             this.v = v;
             this.psf = psf;
@@ -22,8 +19,7 @@ public class Dijkstra_Shortest_Path_In_Weights {
         public int compareTo(Pair o) {
             return this.wsf - o.wsf;
         }
-    }
-
+    }   // Vertex, PathSoFar, WeightSoFar
     private static void dijkstra(ArrayList<Edge>[] graph, int src, int vtces) {
         boolean[] visited = new boolean[vtces];
         PriorityQueue<Pair> queue = new PriorityQueue<>();
@@ -54,7 +50,7 @@ public class Dijkstra_Shortest_Path_In_Weights {
             this.nbr = nbr;
             this.wt = wt;
         }
-    }
+    } // Source, Neighbour, Weight
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -75,6 +71,7 @@ public class Dijkstra_Shortest_Path_In_Weights {
         }
 
         int src = Integer.parseInt(br.readLine());
+
         // write your code here
         dijkstra(graph, src, vtces);
     }

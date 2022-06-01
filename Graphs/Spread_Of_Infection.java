@@ -9,12 +9,11 @@ public class Spread_Of_Infection {
     static class Pair{
         int v;
         int time;
-
         public Pair(int v, int time) {
             this.v = v;
             this.time = time;
         }
-    }
+    }   // Vertex, time
     private static int spreadOfInfection(ArrayList<Edge>[] graph, int src, int t, int vtces) {
         int[] visited = new int[vtces];
         int count = 0;
@@ -46,7 +45,7 @@ public class Spread_Of_Infection {
             this.src = src;
             this.nbr = nbr;
         }
-    }
+    }   // Source, Neighbour
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

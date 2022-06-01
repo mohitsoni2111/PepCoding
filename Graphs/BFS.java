@@ -14,13 +14,13 @@ public class BFS {
             this.vertex = vertex;
             this.psf = psf;
         }
-    }
+    } // Vertex, PathSoFar
     private static void bfs(ArrayList<Edge>[] graph, int src, int vtces){
         boolean[] visited = new boolean[vtces];
         ArrayDeque<Pair> queue = new ArrayDeque<>();
         queue.add(new Pair(src, src + ""));
 
-        while (queue.size() > 0){
+        while (queue.size() > 0){   // r m* w a*
             Pair rem = queue.removeFirst();
             if (visited[rem.vertex]) continue;
             visited[rem.vertex] = true;
@@ -43,7 +43,7 @@ public class BFS {
             this.src = src;
             this.nbr = nbr;
         }
-    }
+    } // Source, Neighbour, Weight
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

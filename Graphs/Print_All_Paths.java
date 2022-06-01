@@ -36,7 +36,7 @@ public class Print_All_Paths {
             this.nbr = nbr;
             this.wt = wt;
         }
-    }
+    } // Source, Neighbour, Weight
     public static void main(String[] args) throws Exception{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int vtces = Integer.parseInt(br.readLine());

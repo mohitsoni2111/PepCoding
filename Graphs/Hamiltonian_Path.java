@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 public class Hamiltonian_Path {
-
     private static void hamiltonian(ArrayList<Edge>[] graph, int src, HashSet<Integer> visited, String psf, int osrc){
         if (visited.size() == graph.length - 1){
             System.out.println(psf);
@@ -19,11 +18,11 @@ public class Hamiltonian_Path {
                 }
             }
 
-            if (closingEdgeFound)
+            if (closingEdgeFound) {
                 System.out.println("*");
-            else
+            } else {
                 System.out.println(".");
-
+            }
             return;
         }
 
@@ -47,7 +46,7 @@ public class Hamiltonian_Path {
             this.nbr = nbr;
             this.wt = wt;
         }
-    }
+    }  // Source, Neighbour, Weight
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
