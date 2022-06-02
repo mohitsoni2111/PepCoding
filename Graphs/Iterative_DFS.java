@@ -28,7 +28,7 @@ public class Iterative_DFS {
             System.out.println(rem.v + "@" + rem.psf);
 
             for (Edge edge : graph[rem.v]){
-                if (visited[edge.nbr]){
+                if (!visited[edge.nbr]){
                     stack.push(new Pair(edge.nbr, rem.psf + edge.nbr));
                 }
             }
