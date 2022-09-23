@@ -6,12 +6,12 @@ public class Merge_Sort {
 
     private static void merge(int[] arr, int left, int mid, int right) {
 
-        // Find the size of two subarrays to be merged
+        // Find the size of two sub arrays to be merged
         int n1 = mid - left + 1;
         int n2 = right - mid;
 
-        int L[] = new int[n1];
-        int R[] = new int[n2];
+        int[] L = new int[n1];
+        int[] R = new int[n2];
 
         // Copy data to temp arrays
         for (int i = 0; i < n1; ++i)
@@ -20,8 +20,8 @@ public class Merge_Sort {
             R[j] = arr[mid + 1 + j];
 
         int i = 0, j = 0;
-        // Initial index of merged subarray
-        int k = 1;
+        // Initial index of merged sub array
+        int k = left;
 
         while (i < L.length && j < R.length){
             if (L[i] < R[j]){
@@ -37,7 +37,6 @@ public class Merge_Sort {
         while (j < R.length){
             arr[k++] = R[j++];
         }
-
     }
 
     private static void mergeSort(int[] arr, int left, int right) {
@@ -49,10 +48,9 @@ public class Merge_Sort {
         }
     }
 
-    private static void printArray(int arr[]) {
-        int n = arr.length;
-        for (int i = 0; i < n; ++i)
-            System.out.print(arr[i] + " ");
+    private static void printArray(int[] arr) {
+        for (int j : arr)
+            System.out.print(j + " ");
         System.out.println();
     }
 

@@ -41,11 +41,9 @@ public class Insertion_Sort {
         arr[i] = arr[j];
         arr[j] = temp;
     }
-
-    private static void printArray(int arr[]) {
-        int n = arr.length;
-        for (int i = 0; i < n; ++i)
-            System.out.print(arr[i] + " ");
+    private static void printArray(int[] arr) {
+        for (int j : arr)
+            System.out.print(j + " ");
         System.out.println();
     }
 
