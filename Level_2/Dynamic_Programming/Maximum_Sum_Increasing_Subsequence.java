@@ -19,7 +19,7 @@ public class Maximum_Sum_Increasing_Subsequence {
             for (int j = 0; j < i; j++){
                 if (arr[i] >= arr[j]){
                     if (max == null){
-                        max = dp[i]
+                        max = dp[i];
                     }
                     else if (dp[j] > max){
                         max = dp[j];
