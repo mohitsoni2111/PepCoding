@@ -13,12 +13,12 @@ public class Longest_Increasing_Subsequence {
 
         int overallMax = 0;
         int[] dp = new int[n];
-
-        for (int i = 0; i < dp.length; i++){
+        dp[0] = 1;
+        for (int i = 1; i < dp.length; i++){
             int max = 0;
             for (int j = 0; j < i; j++){
                 if (arr[i] > arr[j]){
-                    dp[i] = Math.max(max, dp[j]);
+                    max = Math.max(max, dp[j]);
                 }
             }
             dp[i] = max + 1;
