@@ -8,9 +8,9 @@ public class Paint_House {
         int n = arr.length;
         long[][] dp = new long[n][3];
 
-        dp[0][0] = arr[0][1];
-        dp[0][1] = arr[0][2];
-        dp[0][2] = arr[0][3];
+        dp[0][0] = arr[0][0];
+        dp[0][1] = arr[0][1];
+        dp[0][2] = arr[0][2];
 
         for (int i = 1; i < n; i++){
             dp[i][0] = arr[i][0] + Math.min(dp[i - 1][1], dp[i - 1][2]);
