@@ -4,67 +4,57 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.Queue;
 
 public class Sliding_Puzzle {
-    private static String swapChar(String str, int i, int j) {
-        StringBuilder sb = new StringBuilder(str);
-        sb.setCharAt(i, sb.charAt(j));
-        sb.setCharAt(j, sb.charAt(i));
-
-        return sb.toString();
-    }
     public static int slidingPuzzle(int[][] board) {
-
-        LinkedList<String> queue = new LinkedList<>();
         String target = "123450";
-
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < board.length; i++){
-            for (int j = 0; j < board[0].length; j++){
-                sb.append(board[i][j]);
+        String start = "";
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                start += board[i][j];
             }
         }
-        String initial = sb.toString();
-
-        int[][] swapIndex = {{1,3}, {0,2,4}, {1,5}, {0,4}, {1,3,5}, {2,4}};
-
-        queue.addLast(initial);
-        int level = 0;
         HashSet<String> visited = new HashSet<>();
-
-        while (queue.size() > 0){
+        // all the positions 0 can be swapped to
+        int[][] dirs = new int[][] { { 1, 3 }, { 0, 2, 4 },
+                { 1, 5 }, { 0, 4 }, { 1, 3, 5 }, { 2, 4 } };
+        Queue<String> queue = new LinkedList<>();
+        queue.offer(start);
+        visited.add(start);
+        int res = 0;
+        while (!queue.isEmpty()) {
+            // level count, has to use size control here, otherwise not needed
             int size = queue.size();
-
-            while (size-- > 0) {
-                String rem = queue.removeFirst();
-
-                if (rem.equals(target)){
-                    return level;
+            for (int i = 0; i < size; i++) {
+                String cur = queue.poll();
+                if (cur.equals(target)) {
+                    return res;
                 }
-
-                // Finding index of '0'
-                int index = -1;
-                for (int i = 0; i < rem.length(); i++){
-                    if (rem.charAt(i) == '0'){
-                        index = i;
-                        break;
-                    }
-                }
-
-                int[] swap = swapIndex[index];
-                for (int i = 0; i < swap.length; i++){
-                    String newString = swapChar(rem, index, swap[i]);
-                    if (visited.contains(newString)){
+                int zero = cur.indexOf('0');
+                // swap if possible
+                for (int dir : dirs[zero]) {
+                    String next = swap(cur, zero, dir);
+                    if (visited.contains(next)) {
                         continue;
                     }
-                    queue.addLast(newString);
-                    visited.add(newString);
+                    visited.add(next);
+                    queue.offer(next);
+
                 }
             }
-            level++;
+            res++;
         }
         return -1;
     }
+
+    private static String swap(String str, int i, int j) {
+        StringBuilder sb = new StringBuilder(str);
+        sb.setCharAt(i, str.charAt(j));
+        sb.setCharAt(j, str.charAt(i));
+        return sb.toString();
+    }
+
     public static void main(String[] args) throws NumberFormatException, IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

@@ -27,8 +27,7 @@ public class Longest_Increasing_Subsequence_print {
             for (int j = 0; j < i; j++) {
                 //L[i] = {Max(L[j])} + arr[i]
                 // where j < i and arr[j] < arr[i]
-                if ((arr[i] > arr[j]) &&
-                        (L[i].size() < L[j].size() + 1))
+                if ((arr[i] > arr[j]) && (L[i].size() < L[j].size() + 1))
                     L[i] = (Vector<Integer>) L[j].clone();  //deep copy
             }
 

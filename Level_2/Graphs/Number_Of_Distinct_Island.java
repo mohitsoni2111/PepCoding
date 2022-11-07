@@ -5,37 +5,26 @@ import java.io.InputStreamReader;
 import java.util.HashSet;
 
 public class Number_Of_Distinct_Island {
-    public static StringBuilder psf = new StringBuilder();
-    public static void dfs(int[][] arr, int i, int j){
-        arr[i][j] = 0;
+    public static void dfs(int[][] arr, int i, int j, StringBuilder sb, String dir){
+        if(i<0 || i==arr.length || j<0 || j==arr[0].length || arr[i][j]==0) return;
 
-        if (i - 1 >= 0 && arr[i][j] == 1){
-            psf.append("u");
-            dfs(arr, i - 1, j);
-        }
-        if (j + 1 < arr[0].length && arr[i][j] == 1){
-            psf.append("r");
-            dfs(arr, i, j + 1);
-        }
-        if (i + 1 < arr.length && arr[i][j] == 1){
-            psf.append("d");
-            dfs(arr, i - 1, j);
-        }
-        if (j - 1 >= 0 && arr[i][j] == 1){
-            psf.append("l");
-            dfs(arr, i, j + 1);
-        }
-        psf.append("z");
+        sb.append(dir);
+        arr[i][j] = 0;
+        dfs(arr, i-1, j, sb, "u");
+        dfs(arr, i+1, j, sb, "d");
+        dfs(arr, i, j-1, sb, "l");
+        dfs(arr, i, j+1, sb, "r");
+        sb.append("b"); // back
     }
+
     public static int numDistinctIslands(int[][] arr) {
         HashSet<String> set = new HashSet<>();
 
-        for (int i = 0; i < arr.length; i++){
-            for (int j = 0; j < arr[0].length; j++){
-                if (arr[i][j] == 1){
-                    psf = new StringBuilder();
-                    psf.append("x");
-                    dfs(arr, i, j);
+        for(int i=0; i<arr.length; i++){
+            for(int j=0; j<arr[0].length; j++){
+                if(arr[i][j]==1){
+                    StringBuilder psf = new StringBuilder();
+                    dfs(arr, i, j, psf, "o");
 
                     set.add(psf.toString());
                 }

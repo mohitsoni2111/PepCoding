@@ -17,7 +17,6 @@ public class Zero_One_Matrix {
     }   // x, y
     private static final int[][] dirs = new int[][]{{1,0}, {-1,0}, {0,1}, {0,-1}};
     public static int[][] updateMatrix(int[][] matrix) {
-
         LinkedList<Pair> queue = new LinkedList<>();
         for (int i = 0; i < matrix.length; i++){
             for (int j = 0; j < matrix[0].length; j++){
