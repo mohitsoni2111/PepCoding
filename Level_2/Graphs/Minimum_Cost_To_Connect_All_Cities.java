@@ -14,12 +14,12 @@ public class Minimum_Cost_To_Connect_All_Cities {
      */
     int[] parent;
     int n;
-    public int find(int a) {
-        if (parent[a] == a) {
-            return parent[a];
+    public int find(int x) {
+        if (parent[x] == x) {
+            return parent[x];
         }
-        parent[a] = find(parent[a]); // path compression
-        return parent[a];
+        parent[x] = find(parent[x]); // path compression
+        return parent[x];
     }
     public void union(int x, int y) {
         int px = find(x);

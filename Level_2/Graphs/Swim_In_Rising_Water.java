@@ -31,7 +31,6 @@ public class Swim_In_Rising_Water {
 
         int[][] dirs = new int[][]{{0,1}, {1,0}, {-1,0}, {0,-1}};
 
-        int time = 0;
         while (pq.size() > 0){
             Pair rem = pq.remove();
 

@@ -66,6 +66,7 @@ public class Optimize_Water_Distribution {
     }
 
     // Leetcode similar approach
+    // Kruskal's Algo
     int[] uf;
     public int minCostToSupplyWater2(int n, int[] wells, int[][] pipes) {
         uf = new int[n + 1];

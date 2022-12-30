@@ -9,10 +9,8 @@ public class Folding_Linked_List {
             this.next = null;
         }
     }
-
     private static ListNode head;
     static int size;
-
     public Folding_Linked_List() {
         head = null;
     }
@@ -29,7 +27,6 @@ public class Folding_Linked_List {
         }
         return size;
     }
-
     static ListNode left;
     public static void foldHelper(ListNode right, int size, int floor){
         if (right == null) return;
@@ -46,14 +43,12 @@ public class Folding_Linked_List {
             right.next = null;
         }
     }
-
     public static ListNode fold(ListNode head){
         int size = findSize(head);
         left = head;
         foldHelper(head ,size, 0);
         return head;
     }
-
 
     public static void main(String[] args) {
         Folding_Linked_List list = new Folding_Linked_List();

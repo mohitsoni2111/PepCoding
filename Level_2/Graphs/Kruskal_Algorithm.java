@@ -5,8 +5,8 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 
 public class Kruskal_Algorithm {
-    static int[] parent;
-    static int[] rank;
+    private static int[] parent;
+    private static int[] rank;
     public static class Pair implements Comparable<Pair> {
         int u;
         int v;
@@ -45,9 +45,8 @@ public class Kruskal_Algorithm {
                 rank[ly]++;
             }
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
     public static int minCostToSupplyWater(int n, int[][] edges) {
         Pair[] arr = new Pair[edges.length];
