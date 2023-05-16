@@ -3,7 +3,6 @@ package Dynamic_Programming;
 import java.util.Scanner;
 
 public class Buy_And_Sell_Stock_Two_Transaction_Allowed {
-
     private static long bassTTA(int[] prices){
         // Left -> Right Traversal
         int profitIfSoldToday = 0;

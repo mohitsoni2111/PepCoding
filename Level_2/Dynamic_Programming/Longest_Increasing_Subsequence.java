@@ -10,7 +10,6 @@ public class Longest_Increasing_Subsequence {
         for (int i = 0; i < arr.length; i++){
             arr[i] = scn.nextInt();
         }
-
         int overallMax = 0;
         int[] dp = new int[n];
         dp[0] = 1;

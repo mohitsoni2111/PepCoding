@@ -3,7 +3,7 @@ package DSA_Level_1;
 public class Prime_Factors {
 
     public static void primeFactors(int n){
-        while (n%2==0){
+        while (n % 2 == 0){
             System.out.println(2 + " ");
             n /= 2;
         }

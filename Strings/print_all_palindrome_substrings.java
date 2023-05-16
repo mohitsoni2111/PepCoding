@@ -19,13 +19,17 @@ public class print_all_palindrome_substrings {
     }
 
     public static void printPalindromeSubstrings(String str){
+        int count = 0;
         for(int i = 0; i < str.length(); i++){
             for (int j = i+1; j <= str.length(); j++){
                 String substring = str.substring(i, j);
-                if(isPalindrome(substring))
+                if(isPalindrome(substring)) {
+//                    count++;
                     System.out.println(substring);
+                }
             }
         }
+//        return count;
     }
 
     public static void main(String[] args){

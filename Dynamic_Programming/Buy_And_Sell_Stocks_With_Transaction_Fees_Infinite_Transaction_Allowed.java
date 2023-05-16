@@ -3,7 +3,6 @@ package Dynamic_Programming;
 import java.util.Scanner;
 
 public class Buy_And_Sell_Stocks_With_Transaction_Fees_Infinite_Transaction_Allowed {
-
     private static long bassWTFITA(int[] prices, int fee){
         int oldBuyStateProfit = -prices[0];
         int oldSellStateProfit = 0;

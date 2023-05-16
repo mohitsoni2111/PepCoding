@@ -9,22 +9,17 @@ public class Two_Key_Keyboard {
     public static int minSteps(int n) {
         int ans = 0;
 
-        while (n % 2==0){
-            ans += 2;
-            n /= 2;
-        }
-
-        for (int i = 3; i <= Math.sqrt(n); i+=2){
-            while (n % i == 0){
+        for (int i = 2; i <= Math.sqrt(n);){
+            if (n % i == 0){
                 ans += i;
                 n /= i;
+            } else {
+                i++;
             }
         }
-
-        // If n is prime
-        if(n > 2)
-            ans = n;
-
+        if (n != 1){
+            ans += n;
+        }
         return ans;
     }
 
