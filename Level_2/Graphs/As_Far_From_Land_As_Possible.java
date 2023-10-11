@@ -2,26 +2,28 @@ package Level_2.Graphs;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayDeque;
 import java.util.LinkedList;
+import java.util.Queue;
 
 public class As_Far_From_Land_As_Possible {
-    public static class Pair{
+    public static class Pair2{
         int row;
         int col;
 
-        Pair (int row, int col){
+        Pair2 (int row, int col){
             this.row = row;
             this.col = col;
         }
     }
-    public static int maxDistance(int[][] grid) {
+    public static int maxDistance2(int[][] grid) {
 
-        LinkedList<Pair> queue = new LinkedList<>();
+        LinkedList<Pair2> queue = new LinkedList<>();
 
         for (int i = 0; i < grid.length; i++){
             for (int j = 0; j < grid[0].length; j++){
                 if (grid[i][j] == 1){
-                    queue.addLast(new Pair(i, j));
+                    queue.addLast(new Pair2(i, j));
                 }
             }
         }
@@ -37,7 +39,7 @@ public class As_Far_From_Land_As_Possible {
 
             int size = queue.size();
             while (size-- > 0){
-                Pair rem = queue.removeFirst();
+                Pair2 rem = queue.removeFirst();
 
                 for (int i = 0; i < dirs.length; i++){
                     int newRow = rem.row + dirs[i][0];
@@ -47,14 +49,13 @@ public class As_Far_From_Land_As_Possible {
                         continue;
                     }
 
-                    queue.addLast(new Pair(newRow, newCol));
+                    queue.addLast(new Pair2(newRow, newCol));
                     grid[newRow][newCol] = 1;
                 }
             }
         }
         return level;
     }
-
     public static void main(String[] args) throws NumberFormatException, IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -68,7 +69,7 @@ public class As_Far_From_Land_As_Possible {
             }
         }
 
-        System.out.println(maxDistance(arr));
+        System.out.println(maxDistance2(arr));
 
     }
 }

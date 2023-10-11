@@ -22,14 +22,14 @@ public class Sliding_Puzzle {
         Queue<String> queue = new LinkedList<>();
         queue.offer(start);
         visited.add(start);
-        int res = 0;
+        int level = 0;
         while (!queue.isEmpty()) {
             // level count, has to use size control here, otherwise not needed
             int size = queue.size();
             for (int i = 0; i < size; i++) {
                 String cur = queue.poll();
                 if (cur.equals(target)) {
-                    return res;
+                    return level;
                 }
                 int zero = cur.indexOf('0');
                 // swap if possible
@@ -43,17 +43,18 @@ public class Sliding_Puzzle {
 
                 }
             }
-            res++;
+            level++;
         }
         return -1;
     }
-
     private static String swap(String str, int i, int j) {
         StringBuilder sb = new StringBuilder(str);
         sb.setCharAt(i, str.charAt(j));
         sb.setCharAt(j, str.charAt(i));
         return sb.toString();
     }
+
+
 
     public static void main(String[] args) throws NumberFormatException, IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

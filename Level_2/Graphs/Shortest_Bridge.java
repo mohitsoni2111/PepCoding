@@ -8,7 +8,6 @@ public class Shortest_Bridge {
     public static class Pair{
         int row;
         int col;
-
         Pair(int row, int col){
             this.row = row;
             this.col = col;
@@ -72,6 +71,9 @@ public class Shortest_Bridge {
         }
         return -1;
     }
+
+
+
 
     public static void main(String[] args) throws NumberFormatException, IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

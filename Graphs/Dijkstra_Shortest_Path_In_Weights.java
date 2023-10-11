@@ -26,13 +26,19 @@ public class Dijkstra_Shortest_Path_In_Weights {
         queue.add(new Pair(src, src + "", 0));
 
         while (queue.size() > 0){
+            // Remove
             Pair rem = queue.remove();
+
+            // Mark *
             if (visited[rem.v]) continue;
             visited[rem.v] = true;
 
+            // Work
             System.out.println(rem.v  + " via " + rem.psf + " @ " + rem.wsf);
 
+            // Add
             for (Edge edge : graph[rem.v]){
+                // Add *
                 if (!visited[edge.nbr]){
                     queue.add(new Pair(edge.nbr, rem.psf + edge.nbr, rem.wsf + edge.wt));
                 }
