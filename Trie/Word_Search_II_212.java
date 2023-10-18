@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Word_Search_II_212 {
-    class TrieNode{
+    static class TrieNode{
         private TrieNode[] children = new TrieNode[26];
         String str;
 

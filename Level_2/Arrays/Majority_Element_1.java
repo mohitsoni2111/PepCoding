@@ -19,7 +19,7 @@ public class Majority_Element_1 {
         return val;
     }
 
-    public static int majorityElement(int[] nums) {
+    public static int majorityElement2(int[] nums) {
         int value = validCandidate(nums);
 
         int count = 0;
@@ -33,6 +33,23 @@ public class Majority_Element_1 {
         else return -1;
     }
 
+    public static int majorityElement(int[] nums){
+        int candidateElement = nums[0];
+        int counter = 1;
+
+        for (int i = 1; i < nums.length; i++){
+            if (nums[i] == candidateElement) {
+                counter++;
+            } else {
+              counter--;
+              if (counter == 0){
+                  candidateElement = nums[i];
+                  counter = 1;
+              }
+            }
+        }
+        return candidateElement;
+    }
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
         int n = scn.nextInt();
