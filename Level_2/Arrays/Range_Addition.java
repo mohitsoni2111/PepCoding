@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Range_Addition {
     public static int[] getModifiedArray(int length, int[][] updates) {
-
         int[] res = new int[length];
         for (int[] update : updates) {
             int startIndex = update[0];

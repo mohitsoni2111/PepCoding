@@ -12,7 +12,8 @@ public class Faulty_Keyboard {
         for(int j = 0; j < n; j++){
             if(i < m && name.charAt(i) == typed.charAt(j)){
                 i++;
-            } else if(j == 0 || typed.charAt(j-1) != typed.charAt(j)) return false;
+            } else if(j == 0 || typed.charAt(j-1) != typed.charAt(j))
+                return false;
         }
 
         return i == m;

@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Maximum_XOR_of_Two_Numbers_in_an_Array_421 {
 
-    class TrieNode{
+    static class TrieNode{
         HashMap<Character, TrieNode> childrenMap = new HashMap<>();
     }
 
