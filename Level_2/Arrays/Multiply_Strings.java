@@ -44,7 +44,6 @@ public class Multiply_Strings {
         }
         return str.toString();
     }
-
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
 

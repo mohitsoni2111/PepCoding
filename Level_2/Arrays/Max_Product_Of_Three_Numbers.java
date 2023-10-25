@@ -37,7 +37,6 @@ public class Max_Product_Of_Three_Numbers {
         // 2. Compare
         return Math.max(min1 * min2 * max1, max1 * max2 * max3);
     }
-
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
         int n = scn.nextInt();
