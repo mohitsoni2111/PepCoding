@@ -1,8 +1,5 @@
 package LeetCode.BinaryTree;
 
-import Binary_Trees.Binary_Tree;
-import com.sun.source.tree.Tree;
-
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
