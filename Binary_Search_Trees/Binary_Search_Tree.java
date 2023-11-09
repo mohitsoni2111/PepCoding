@@ -17,7 +17,7 @@ public class Binary_Search_Tree {
             this.left = left;
             this.right = right;
         }
-    }
+    } // node, left, right
     public static void display(Node node){
         if (node == null) return;
 
@@ -118,7 +118,7 @@ public class Binary_Search_Tree {
                 return null;
         }
         return node;
-    }
+    } // Find leftMax and replace with node, delete leftMax
     static int sum = 0;
     public static void replaceWithSumOfLarger(Node node){
         if (node == null) return;
@@ -198,7 +198,7 @@ public class Binary_Search_Tree {
             this.node = node;
             this.state = state;
         }
-    }
+    } // node, state
     public static @Nullable Node getNextFromNormalInOrder(@NotNull Stack<ITPair> leftStack){
         while (leftStack.size() > 0){
             ITPair top = leftStack.peek();
